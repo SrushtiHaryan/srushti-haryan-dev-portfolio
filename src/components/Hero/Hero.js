@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero-container">
 
             {/* image */}
-            <img src="\assets\profile-pic.png" className='hero-image rounded-full mt-14'></img>
+            <img src="\assets\profile-pic.jpeg" className='hero-image rounded-full mt-14'></img>
             {/* name */}
             <div className="hero-greeting ">Hi, I'm Srushti <span className="wave-emoji">👋</span></div>
             <div className="hero-role">Full-stack Developer</div>
