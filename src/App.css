@@ -1,38 +1,783 @@
+
 .App {
+  text-align: center;
+  background-color: rgb(14,20,36);
+  background-color: rgb(40, 31, 85);
+  background-color:  rgb(16,20,40);;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.glass-nav {
+  width: fit-content;
+  padding: 16px;
+  font-family: monospace;
+  font-size: 1.25rem;
+  position: fixed;
+  transition: background-color 0.5s ease; /* Add a transition for smoothness */
+  z-index: 10;
+}
+
+/* Styles for the glass effect when scrolled */
+.App.scrolled .glass-nav {
+  background: rgba(79,84,103, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5); /* Default color for links */
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links li a.active {
+  color: white; /* Color for active link */
+}
+.nav-links li a.active::before {
+  color: rgb(119,66,218); /* Color for active link */
+  content: "<";
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+.nav-links li a.active::after {
+  color: rgb(119,66,218); /* Color for active link */
+  content: "/>";
+  font-size: 1.2rem;
+  font-family: monospace;
+}
+
+*{
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.quote-container {
+  width: 100%;
+  /* height: 20vh; */
+  
+  /* border: 1px solid #ccc; */
+  padding: 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+  margin: 7rem;
+  margin-bottom: 0rem;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 2px 12px, #00000088 0 1px 35px 8px, #0003 0 -3px inset;
+  background-image: url(/public/assets/coding_bg_1.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(-5DEG);
+
+}
+.quote-container-2 {
+  width: 100%;
+  /* height: 20vh; */
+  
+  /* border: 1px solid #ccc; */
+  padding: 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+  margin: 0rem;
+  margin-bottom: 0rem;
+  transition: background-color 0.3s ease-in-out;
+ 
+
+}
+
+
+.quote-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+ 
+  filter: blur(50%); /* Adjust the blur amount */
+}
+
+.quote-container::after {
+  content: '';
+  background-image: url('/public/assets/coding_bg_1.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.skills-container {
+  /* width: 100vw; */
+  
+  
+  margin-top: 2rem;
+  text-align: left;
+  padding-left: 2rem;
+  z-index: 5;
+ 
+}
+
+
+.projects-container{
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 3rem;
+
+
+
+
+
+}
+
+
+.skills-heading::before {
+
+  color: rgb(119,66,218); /* Color for active link */
+  content: "<";
+  font-size: 1.3rem;
+  font-family: monospace;
+  
+  
+}
+.skills-heading::after {
+  
+  color: rgb(119,66,218); /* Color for active link */
+  content: "/>";
+  font-size: 1.3rem;
+  font-family: monospace;
+  
+  
+  
+}
+
+.skills-heading{
+  color: #fff;
+  font-size:1.3rem;
+  font-family: 'Poppins';
+  font-weight: bold;
+}
+
+.skills-heading-tag{
+  color: #fff;
+  font-size:1.9rem;
+  font-weight: bold;
+  
+}
+
+.skills-container-list {
+  max-width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #0D1320;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Adjust the shadow values as needed */
+  margin-top: 1rem;
+  z-index: 5;
+  gap:30px;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.skills-image-container{
+  background-color: rgb(26,34,56);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+
+  transition: box-shadow 0.3s; /* Smooth transition for the shadow */
+  
+  
+
+}
+
+@keyframes pounding {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Increase shadow size */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Return to the original shadow */
+  }
+}
+
+
+
+.skills-image-container:hover {
+  animation: pounding 1.5s ease infinite;
+  
+}
+
+
+
+
+.skills-image-container svg{
+  width: 50px;
+  height: 100px;
+}
+
+#tailwind-css{
+  transform: scale(1.8);
+  padding:38px 12px;
+}
+
+#nodejs{
+  padding-top: 20px;
+  
+}
+
+#python{
+  padding-top:20px;
+}
+
+#nodejs-logo{
+  border: 1px solid #8CC84B;
+}
+
+#nodejs-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#nodejs-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+
+#html-logo{
+  border: 1px solid #F16529;
+}
+
+#html-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#html-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+#css-logo{
+  border: 1px solid #2196F3;
+}
+#css-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#css-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#js-logo{
+  border: 1px solid #F0D91F;
+}
+#js-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#js-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#react-logo{
+  border: 1px solid #53C1DE;
+}
+#react-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#react-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+#github-logo{
+  border: 1px solid #fff;
+}
+#github-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#github-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+
+#sql-logo{
+  border: 1px solid #00618A;
+}
+#sql-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#sql-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#mongo-logo{
+  border: 1px solid #58AA50;
+}
+#mongo-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#mongo-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#python-logo{
+  border: 1px solid #FFE052;
+}
+#python-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#python-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#java-logo{
+  border: 1px solid #0074BD;
+}
+#java-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#java-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+
+#express-logo{
+  border: 1px solid #fff;
+}
+#express-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+#express-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+#tailwind-logo{
+  border: 1px solid #39B2AD;
+}
+#tailwind-logo::before {
+  content: attr(data-tooltip); /* Use the 'data-tooltip' attribute for tooltip text */
+  position: absolute;
+  bottom: calc(100% + 8px); /* Position the tooltip above the element */
+  left: 50%; /* Center the tooltip horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  padding: 4px 8px; /* Adjust padding as needed */
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Allows hover over the logo */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#tailwind-logo:hover::before {
+  opacity: 1; /* Show the tooltip on hover */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.marquee-container{
+  background-color: rgb(34, 0, 85);
+
+}
+.marquee-container p{
+  margin:0.5rem 2rem;
+  color: white;
+  font-size:1.2rem;
+  font-weight:600;
+  font-family: 'Poppins';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.marquee-container p::before {
+  
+  color: rgb(119,66,218); /* Color for active link */
+  content: "<";
+  font-size: 1.2rem;
+  
+  font-family: 'Poppins';
+  
+  
+}
+.marquee-container p::after {
+  
+  color: rgb(119,66,218); /* Color for active link */
+  content: "/>";
+  font-size: 1.2rem;
+  font-family: 'Poppins';
+  
+  
+}
+
+.aboutme-container{
+
+  
+  margin-top: 6rem;
+  text-align: left;
+  padding-left: 2rem;
+  z-index: 5;
+  color: #ffffff;
+  
+  
+  
+}
+
+.aboutme-content{
+  
+  margin-top: 1.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap:wrap;
+
+  
+  
+  justify-content: center;
+}
+.aboutme-right .swiper {
+
+  /* min-width: 40vw; */
+  max-width: 40vw;
+  
+}
+
+
+.aboutme-right .swiper-slide {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 18px  !important;
+ 
+  font-weight: bold;
+  color: #fff;
+
+  width: 100% !important; 
+
+  /* max-width: 65% !important; */
+  /* height: 600px !important; */
+  margin-top: 3rem;
+  padding: 1rem 0.5rem;
+   /* Box Shadow */
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+   border: 5px solid rgb(119,66,218);
 }
 
-.App-link {
-  color: #61dafb;
+
+/* .aboutme-right .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+} */
+
+.aboutme-right .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color:rgb(119,66,218);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.aboutme-right .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: rgb(119,66,218);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }
+
+.contact-container{
+  margin-top: 3rem;
+  z-index:5;
+}
+
+.top-vertical-email{
+  position: absolute;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.vertical-line {
+  /* position: absolute; */
+  border-left: 2px solid #9CABF2; /* Change 'black' to your desired color */
+  height: 20rem;
+  width: 0;
+  
+}
+
+.horizontal-line{
+  
+  border-top: 2px solid #9CABF2; /* Change 'black' to your desired color */
+  height: 0;
+  width: 20rem;
+}
+
+.vl-2{
+  margin-left: 19.9rem;
+  height: 18rem;
+
+}
+
+.hl-1{
+  
+  left:30rem;
+  top:88rem;
+}
+
+.vl-3{
+  
+  height: 18rem;
+}
+
+.email-id {
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  color:#fff;
+  
+  /* position: absolute;
+  top: 4rem; Adjust the distance from the line as needed
+  /* left: -20px; Adjust the positioning as needed */
+  white-space: nowrap; 
+}
+
+
+.vl-4{
+  transform: translateX(-5rem);
+  height:15rem;
+}
+.vl-5{
+  transform: translateX(4.9rem);
+  height:15rem;
+}
+
+
+.vl-6{
+  height:15rem;
+ 
+}
+
+
+
+
+.hl-2{
+  width:10rem;
+  transform: translateX(-5rem);
+}
+.hl-3{
+
+  width:20rem;
+  transform: translateX(-10rem);
+ 
+  
+}
+
+.vl-7{
+  transform: translateX(9.9rem);
+}
+.vl-8{
+  transform: translateX(-10rem);
+}
+.vl-9{
+  transform: translateX(-8rem);
+  height: 15rem;
+}
+.vl-10{
+  transform: translateX(6.9rem);
+  height: 15rem;
+}
+.hl-4{
+  width:15rem;
+  transform: translateX(-8rem);
+}
+
+
+
+
+
+

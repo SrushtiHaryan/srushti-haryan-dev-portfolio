@@ -1,0 +1,42 @@
+/* QuoteComponent.css */
+
+
+  .quote-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+  
+  .quote-text p {
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .highlight {
+    background-color: yellow; /* Change this to the highlight color you want */
+  }
+  
+  /* .reveal {
+    background:transparent;
+    transform: rotate(5DEG);
+    color: #fff;
+    font-size:1.5rem;
+
+
+    
+  }
+   */
+  .reveal-text {
+    font-weight: 800;
+    font-size: 4rem;
+    line-height: 5rem;
+    color: #484F61;
+    /* filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2)); */
+    z-index: 5;
+  }
+  
+  
+
+ 

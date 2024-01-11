@@ -1,0 +1,67 @@
+.aboutme-card{
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0,5rem 0.5rem;
+    border-radius: 10px;
+    cursor:default;
+   
+
+}
+
+.aboutme-heading{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    
+}
+
+
+.aboutme-desc{
+    font-size: 1.3rem;
+    border-left: 2px solid rgb(156,171,242);
+    margin-top:1rem;
+    margin-bottom:1rem;
+    padding: 1rem;
+    padding-left:2rem;
+    margin-left: 1rem;
+    font-weight:normal;
+
+}
+
+.aboutme-desc-tag::before {
+
+    color: rgb(119,66,218); /* Color for active link */
+    content: "<";
+    font-size: 1.3rem;
+    font-family: monospace;
+    
+    
+}
+.aboutme-desc-tag::after {
+    
+    color: rgb(119,66,218); /* Color for active link */
+    content: ">";
+    font-size: 1.3rem;
+    
+    font-family: monospace;
+
+    
+}
+.tag-close::after {
+    
+    color: rgb(119,66,218); /* Color for active link */
+    content: "/>";
+    font-size: 1.3rem;
+    font-family: monospace;
+    
+    
+  }
+
+  .aboutme-desc-tag{
+    font-size:1.2rem;
+    font-weight:normal;
+  }

@@ -1,0 +1,187 @@
+.project-container .swiper {
+  width: 100%;
+
+  padding-left:28vw;
+  
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+.project-container .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+ 
+  font-weight: bold;
+  color: #fff;
+
+  max-width: 65% !important;
+  height: 600px !important;
+  margin-top: 3rem;
+  padding: 2rem;
+   /* Box Shadow */
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+}
+
+.slide-content {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  gap:1rem;
+
+}
+
+.slide-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1rem;
+}
+
+.slide-left h2{
+    font-size: 1.5rem;
+
+}
+.slide-left p{
+    font-size: 1.2rem;
+    font-weight: normal;
+
+}
+
+.slide-right img{
+    border-radius: 15px;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.slide-right{
+    max-height: 480px;
+    overflow-y: hidden;
+    border-radius: 15px;
+}
+.slide-right.hover-scroll img {
+  transform: translateY(calc(-100% + 570px)); /* Scroll the image to the bottom */
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: #1a2238;
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: #1a2238;
+}
+/* 
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
+} */
+
+.project-container {
+  width: 100%;
+  min-height: 700px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+
+  /* border: 1px solid #ccc; */
+  /* padding: 4rem 4rem; */
+
+
+  margin: 3rem;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 2px 12px, #00000088 0 1px 35px 8px,
+    #0003 0 -3px inset;
+  background-image: url(/public/assets/coding_bg_1.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    z-index: 5;
+  }
+  .hero-buttons svg {
+    color: white;
+    z-index: 3;
+  }
+  .hero-resume-button {
+    background-color: rgb(119, 66, 218);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+  }
+  
+  .hero-github-button {
+    background-color: rgb(27, 34, 57);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  
+  .hero-github-button svg {
+    font-size: 1.25rem;
+    color: white;
+  }
+  .hero-resume-button svg {
+    font-size: 1.25rem;
+    color: white;
+  }
+  
+  .hero-resume-button:hover,
+  .hero-github-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #a7cff981;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  
+  }
+
+  .swiper-pagination-bullet{
+    background-color: #7642DB;
+  }
+
+  
