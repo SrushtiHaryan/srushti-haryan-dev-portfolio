@@ -77,7 +77,7 @@ export default function Projects() {
                                         <FaLink />
                                         <div class="hero-resume-text">Demo Link</div>
                                     </div>
-                                    <div class="hero-github-button">
+                                    <div class="project-github-button">
                                         <FiGithub />
                                         <div class="hero-github-text">GitHub</div>
                                     </div>

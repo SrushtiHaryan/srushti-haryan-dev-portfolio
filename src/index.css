@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+*{
+  scroll-padding-top: 6rem;
+}
 body {
   margin: 0;
 
@@ -15,7 +19,10 @@ body {
   background-color: rgb(16,20,40);
   overflow-x: hidden;
   
+  
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

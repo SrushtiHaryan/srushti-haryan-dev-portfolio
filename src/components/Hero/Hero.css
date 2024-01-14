@@ -6,6 +6,8 @@
   z-index: 3;
   width: 60vw;
   gap: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .hero-image {
@@ -103,7 +105,7 @@
 }
 
 .hero-github-button {
-  background-color: rgb(27, 34, 57);
+  background-color: rgb(21, 27, 45);
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;

@@ -61,6 +61,9 @@ function App() {
   }, []);
 
 
+  
+
+
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
